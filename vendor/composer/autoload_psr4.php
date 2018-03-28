@@ -7,5 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'TinyMvc\\' => array($vendorDir . '/Core'),
-    'App\\' => array($baseDir . '/src'),
+    'App\\' => array($baseDir . '/App'),
 );

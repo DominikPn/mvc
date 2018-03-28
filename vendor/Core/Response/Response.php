@@ -3,18 +3,49 @@
  * Created by PhpStorm.
  * User: DesktopHome
  * Date: 2018-03-28
- * Time: 16:01
+ * Time: 17:30
  */
 
 namespace TinyMvc\Response;
 
 
-interface Response
+class Response implements ResponseInterface
 {
-    public function redirect(string $url);
-    public function contentDispos(string $contentDispos);
-    public function contentType(string $contentType);
-    public function status(string $status);
-    public function getBody();
-    public function body();
+    private $content;
+
+    public function __construct(string $content)
+    {
+        $this->content = $content;
+    }
+
+    public function redirect(string $url)
+    {
+        // TODO: Implement redirect() method.
+    }
+
+    public function contentDispos(string $contentDispos)
+    {
+        // TODO: Implement contentDispos() method.
+    }
+
+    public function contentType(string $contentType)
+    {
+        // TODO: Implement contentType() method.
+    }
+
+    public function status(string $status)
+    {
+        // TODO: Implement status() method.
+    }
+
+    public function getBody()
+    {
+        // TODO: Implement getBody() method.
+    }
+
+    public function send()
+    {
+        echo $this->content;
+    }
+
 }

@@ -14,5 +14,5 @@ interface RouterBinder
     /**
      * @return \TinyMvc\Router\RouterBinding
      */
-    public function bind(string $methodName, string $url, $action);
+    public function bind(string $methodName, string $path, $action);
 }

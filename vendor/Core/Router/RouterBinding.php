@@ -20,11 +20,16 @@ interface RouterBinding
 
     public function getName();
 
-    public function url(string $url);
+    public function path(string $url);
 
-    public function getUrl();
+    public function getPath();
 
     public function action($action);
 
+    /**
+     * @return closure or string object@method
+     */
     public function getAction();
+
+    public function method(string $method);
 }

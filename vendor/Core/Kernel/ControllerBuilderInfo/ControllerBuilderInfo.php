@@ -18,8 +18,7 @@ interface ControllerBuilderInfo
      */
     public function getVariables();
 
-    /**
-     * @return string(controller@method or Closure)
-     */
-    public function getControllerInfo();
+    public function getMethod();
+
+    public function getNameSpace();
 }

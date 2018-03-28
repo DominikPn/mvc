@@ -10,6 +10,7 @@ namespace TinyMvc\Request;
 
 interface RequestInterface
 {
+    public function getPath();
     public function getMethod();
     public function getUrl();
     public function input(string $kay, string $default);
