@@ -1,0 +1,18 @@
+{
+    "name": "vendor/core",
+    "description": "Simple mvc framwerow by Dominik Pondo",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Dominik Pondo",
+            "email": "dominikpondo@gmail.com"
+        }
+    ],
+    "autoload":{
+        "psr-4":{
+            "TinyMvc\\":"vendor/Core",
+            "App\\":"src"
+        }
+    },
+    "require": {}
+}
