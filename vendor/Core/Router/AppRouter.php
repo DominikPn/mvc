@@ -9,6 +9,7 @@
 namespace TinyMvc\Router;
 
 
+use App\TestClass;
 use TinyMvc\Request\Request;
 use TinyMvc\Request\RequestInterface;
 use TinyMvc\Router\AppRouterBinding;
@@ -80,11 +81,36 @@ class AppRouter implements Router, RouterBinder
 
     private function createControllerBuilderInfo($action)
     {
+        $data = explode('@', $action);
+        $controllerBuilderInfo = new ControllerBuilderInfoImpl($data[0], $data[1]);
 
-            $data = explode('@',$action);
-            $controlerBuilderInfo =  new ControllerBuilderInfoImpl($data[0], $data[1]);
-            $controlerBuilderInfo->addVariable('test',123);
-            return $controlerBuilderInfo;
+        return $controllerBuilderInfo;
     }
 
+    /* Convert string '/sample/{asd}' to array [ 0=>'asd' ] */
+    private function getPathVariables(string $patch)
+    {
+        $matches = null;
+        preg_match_all('/\{[a-z]+\}/', $patch, $matches);
+        foreach ($matches as $kay => $match) {
+            $matches[0][$kay] = str_replace('{', '', $match);
+            $matches[0][$kay] = str_replace('}', '', $match);
+        }
+
+        return $matches[0];
+    }
+
+    private function convertPathToRegex(string $path)
+    {
+        $regexPath = preg_replace('/\{[a-z]+\}/','.*',$path);
+        $regexPath = str_replace('/', '\/', $regexPath);
+        $regexPath = '/'.$regexPath.'/';
+
+        return $regexPath;
+    }
+
+    private function comparePaths(string $regexPath,string $path )
+    {
+       return preg_match($regexPath, $path);
+    }
 }

@@ -66,7 +66,7 @@ class AppContainer implements Container
 
     }
 
-    private function checkIfClassWasHasBinding(string $className){
+    private function checkIfClassHasBinding(string $className){
         return array_key_exists($className,$this->bindings);
     }
 }
