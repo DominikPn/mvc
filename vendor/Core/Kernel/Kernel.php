@@ -38,7 +38,6 @@ class Kernel
     public function execute(){
 
         $controllerData = $this->router->getControllerData();
-
         $controllerInstance = $this->container->make( $controllerData->getNameSpace() );
         $response = $this->controllerResolver->callController($controllerData,$controllerInstance);
 

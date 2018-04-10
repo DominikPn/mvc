@@ -14,8 +14,8 @@ use TinyMvc\Response\Response;
 
 class TestController extends Controller
 {
-    public function index(TestInterface $test)
+    public function index()
     {
-        return new Response( $test->testMetoda() );
+        return new Response( 'gf' );
     }
 }

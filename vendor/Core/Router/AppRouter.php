@@ -44,14 +44,16 @@ class AppRouter implements Router, RouterBinder
         foreach ($this->routes as $route) {
             $path = $this->request->getPath();
             $routePath = $route->getPath();
-            $pathVariables = $this->getPathVariables($routePath);
             $regexPath = $this->convertPathToRegex($routePath);
             $routeMethod = $route->getMethod();
             $requestMethod = $this->request->getMethod();
 
+            $variableNames = $this->extractVariableNames($routePath);
+            $variableNamesAndValues = $this->extractVariableValues($regexPath, $path, $variableNames);
+print_r($variableNamesAndValues);
             /* check if route is equal to request route */
             if ($this->comparePaths($regexPath, $path) && ($routeMethod == $requestMethod) ) {
-                return $this->createControllerBuilderInfo($route->getAction());
+                return $this->createControllerBuilderInfo($route->getAction(),$variableNamesAndValues);
             }
         }
 
@@ -87,30 +89,27 @@ class AppRouter implements Router, RouterBinder
         return ($path == $expectedPath) && ($method == $expectedMethod);
     }
 
-    private function createControllerBuilderInfo($action)
+    private function createControllerBuilderInfo($action,$additionalVariables)
     {
         $data = explode('@', $action);
         $controllerBuilderInfo = new ControllerBuilderInfoImpl($data[0], $data[1]);
-
+        foreach ($additionalVariables as $kay=>$value){
+            $controllerBuilderInfo->addVariable($kay, $value);
+        }
         return $controllerBuilderInfo;
     }
 
-    /* Convert string '/sample/{asd}' to array [ 0=>'asd' ] */
-    private function getPathVariables(string $patch)
+    /* Convert string '/sample/{asd}' to array [ '{asd}' ] */
+    private function extractVariableNames(string $path)
     {
         $matches = null;
-        preg_match_all('/\{[a-z]+\}/', $patch, $matches);
-        foreach ($matches as $kay => $match) {
-            $matches[0][$kay] = str_replace('{', '', $match);
-            $matches[0][$kay] = str_replace('}', '', $match);
-        }
-
-        return $matches[0];
+        preg_match_all('/\{([a-z]+)\}/', $path, $matches);
+        return $matches[1];
     }
 
     private function convertPathToRegex(string $path)
     {
-        $regexPath = preg_replace('/\{[a-z]+\}/', '.*', $path);
+        $regexPath = preg_replace('/\{[a-z]+\}/', '(.*)', $path);
         $regexPath = str_replace('/', '\/', $regexPath);
         $regexPath = '/' . $regexPath . '/';
 
@@ -120,5 +119,16 @@ class AppRouter implements Router, RouterBinder
     private function comparePaths(string $regexPath, string $path)
     {
         return preg_match($regexPath, $path);
+    }
+
+    private function extractVariableValues(string $regexPatch, string $path,array $variableNames)
+    {
+        $matches = null;
+        $variableAndValue = [];
+        preg_match_all($regexPatch, $path, $matches);
+        foreach ($variableNames as $kay=>$name){
+            $variableAndValue[$name]=$matches[$kay+1];
+        }
+        return $variableAndValue;
     }
 }
