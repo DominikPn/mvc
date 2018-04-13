@@ -7,3 +7,5 @@
  */
 
 $router->bind('GET', '/testa/{wololo}/jolo/{test}', '\App\Controllers\TestController@index')->name('controller');
+$router->bind('GET', '/testa/jolo', '\App\Controllers\TestController@index')->name('controller');
+$router->bind('GET', '/testa/{wololo}/jolo/{test}', '\App\Controllers\TestController@index')->name('controller');

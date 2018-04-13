@@ -16,6 +16,7 @@ class TestController extends Controller
 {
     public function index()
     {
-        return new Response( 'gf' );
+
+        return new Response( 'cvbcvb');
     }
 }

@@ -24,9 +24,7 @@ class AppControllerResolver implements ControllerResolver
     {
         $reflectionMethod = new \ReflectionMethod($controller, $controllerBuilderInfo->getMethod());
         $additionalVariables = $controllerBuilderInfo->getVariables();
-       // var_dump($additionalVariables);
         $parameters = $reflectionMethod->getParameters();
-
         $finalArgs = [];
 
         foreach ($parameters as $parameter){
