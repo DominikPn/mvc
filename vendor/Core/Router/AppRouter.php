@@ -50,7 +50,6 @@ class AppRouter implements Router, RouterBinder
 
             $variableNames = $this->extractVariableNames($routePath);
             $variableNamesAndValues = $this->extractVariableValues($regexPath, $path, $variableNames);
-print_r($variableNamesAndValues);
             /* check if route is equal to request route */
             if ($this->comparePaths($regexPath, $path) && ($routeMethod == $requestMethod) ) {
                 return $this->createControllerBuilderInfo($route->getAction(),$variableNamesAndValues);
@@ -127,7 +126,7 @@ print_r($variableNamesAndValues);
         $variableAndValue = [];
         preg_match_all($regexPatch, $path, $matches);
         foreach ($variableNames as $kay=>$name){
-            $variableAndValue[$name]=$matches[$kay+1];
+            $variableAndValue[$name]=$matches[$kay+1][0];
         }
         return $variableAndValue;
     }
