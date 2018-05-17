@@ -7,6 +7,7 @@
  */
 
 $router->bind('GET', '/', '\App\Controllers\TestController@index')->name('controller');
-$router->bind('GET', '/testZmiennej/{zmienna}', '\App\Controllers\TestController@metodaZeZmienna')->name('metodaZeZmienna');
-$router->bind('GET', '/testa/jolo', '\App\Controllers\TestController@index')->name('controller');
-$router->bind('GET', '/testa/{wololo}/jolo/{test}', '\App\Controllers\TestController@index')->name('controller');
+$router->bind('GET', '/test/{zmienna}', '\App\Controllers\TestController@metodaZeZmienna')->name('metodaZeZmienna');
+$router->bind('GET', '/test/{zmienna}/Janusz/{zmienna2}', '\App\Controllers\TestController@metodaZeZmienna2')->name('metodaZeZmienna2');
+$router->bind('GET', '/containerTest/{jakasWartosc}', '\App\Controllers\TestController@containerTest')->name('testResolva');
+$router->bind('GET', '/container', '\App\Controllers\TestController@containerBindingTest')->name('testResolva');

@@ -34,6 +34,8 @@ require_once '../routes/web.php';
 
 $container = new AppContainer();
 
+$container->bind('App\TestInterface','App\TestClass');
+
 $controllerResolver = new AppControllerResolver($container);
 
 $config = new AppConfig();

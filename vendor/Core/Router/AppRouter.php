@@ -102,13 +102,13 @@ class AppRouter implements Router, RouterBinder
     private function extractVariableNames(string $path)
     {
         $matches = null;
-        preg_match_all('/\{([a-z]+)\}/', $path, $matches);
+        preg_match_all('/\{([A-Za-z0-9]+)\}/', $path, $matches);
         return $matches[1];
     }
 
     private function convertPathToRegex(string $path)
     {
-        $regexPath = preg_replace('/\{[a-z]+\}/', '(.*)', $path);
+        $regexPath = preg_replace('/\{[A-Za-z0-9]+\}/', '([A-Za-z0-9]*)', $path);
         $regexPath = str_replace('/', '\/', $regexPath);
         $regexPath = '/^' . $regexPath . '$/';
 

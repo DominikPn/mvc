@@ -14,6 +14,6 @@ class TestClass implements TestInterface
 
     public function testMetoda()
     {
-        return 'twojastarametoda';
+        return 'Metoda testMetoda() zaimplementowana w klasie TestClass';
     }
 }
