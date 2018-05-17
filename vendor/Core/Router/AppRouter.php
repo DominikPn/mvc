@@ -47,7 +47,7 @@ class AppRouter implements Router, RouterBinder
             $regexPath = $this->convertPathToRegex($routePath);
             $routeMethod = $route->getMethod();
             $requestMethod = $this->request->getMethod();
-
+		
             /* check if route is equal to request route */
             if ( $this->comparePaths($regexPath, $path) && ($routeMethod == $requestMethod) ) {
                 $variableNames = $this->extractVariableNames($routePath);
@@ -110,14 +110,14 @@ class AppRouter implements Router, RouterBinder
     {
         $regexPath = preg_replace('/\{[a-z]+\}/', '(.*)', $path);
         $regexPath = str_replace('/', '\/', $regexPath);
-        $regexPath = '/' . $regexPath . '/';
+        $regexPath = '/^' . $regexPath . '$/';
 
         return $regexPath;
     }
 
     private function comparePaths(string $regexPath, string $path)
     {
-        return preg_match($regexPath, $path);
+        return preg_match(''.$regexPath.'', $path);
     }
 
     private function extractVariableValues(string $regexPatch, string $path,array $variableNames)

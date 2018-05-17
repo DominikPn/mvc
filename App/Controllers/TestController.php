@@ -17,6 +17,11 @@ class TestController extends Controller
     public function index()
     {
 
-        return new Response( 'cvbcvb');
+        return new Response( 'Testowy kontroler');
     }
+	
+	public function metodaZeZmienna($zmienna)
+	{
+		return new Response('Wartosc $zmienna: '.$zmienna);
+	}
 }
