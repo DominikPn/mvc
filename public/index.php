@@ -16,15 +16,6 @@ use MyMvc\Container\AppContainer;
 use \MyMvc\Config\AppConfig;
 
 
-//$test = function ($asd){
-//    echo 'dupa';
-//};
-
-//$reflection = new ReflectionClass($test);
-//$reflectionMethod= $reflection->getMethod('call');
-//
-//var_dump ($reflectionMethod->invoke($test,'asd'));
-
 $request = Request::make();
 
 $router = new AppRouter($request);
