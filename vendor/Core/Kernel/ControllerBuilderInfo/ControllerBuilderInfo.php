@@ -6,7 +6,7 @@
  * Time: 15:30
  */
 
-namespace TinyMvc\Kernel\ControllerBuilderInfo;
+namespace MyMvc\Kernel\ControllerBuilderInfo;
 
 
 interface ControllerBuilderInfo

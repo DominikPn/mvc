@@ -6,7 +6,7 @@
  * Time: 17:04
  */
 
-namespace TinyMvc\Request;
+namespace MyMvc\Request;
 
 
 class Request implements RequestInterface

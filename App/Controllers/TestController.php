@@ -10,7 +10,7 @@ namespace App\Controllers;
 
 
 use App\TestInterface;
-use TinyMvc\Response\Response;
+use MyMvc\Response\Response;
 
 class TestController extends Controller
 {

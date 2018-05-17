@@ -6,16 +6,16 @@
  * Time: 16:40
  */
 
-namespace TinyMvc\Kernel;
+namespace MyMvc\Kernel;
 
 
 use App\TestClass;
-use TinyMvc\Config\AppConfig;
-use TinyMvc\Container\Container;
-use TinyMvc\ControllerResolver\ControllerResolver;
-use TinyMvc\Response\Response;
-use TinyMvc\Response\ResponseInterface;
-use TinyMvc\Router\Router;
+use MyMvc\Config\AppConfig;
+use MyMvc\Container\Container;
+use MyMvc\ControllerResolver\ControllerResolver;
+use MyMvc\Response\Response;
+use MyMvc\Response\ResponseInterface;
+use MyMvc\Router\Router;
 
 class Kernel
 {

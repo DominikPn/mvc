@@ -8,7 +8,7 @@
 
 namespace App\Controllers;
 
-class Controller extends \TinyMvc\Controller\AppController
+class Controller extends \MyMvc\Controller\AppController
 {
 
 }

@@ -6,7 +6,7 @@
  * Time: 18:02
  */
 
-namespace TinyMvc\Controller;
+namespace MyMvc\Controller;
 
 
 class AppController

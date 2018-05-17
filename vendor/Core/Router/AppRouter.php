@@ -6,14 +6,14 @@
  * Time: 16:58
  */
 
-namespace TinyMvc\Router;
+namespace MyMvc\Router;
 
 
 use App\TestClass;
-use TinyMvc\Request\Request;
-use TinyMvc\Request\RequestInterface;
-use TinyMvc\Router\AppRouterBinding;
-use TinyMvc\Kernel\ControllerBuilderInfo\ControllerBuilderInfoImpl;
+use MyMvc\Request\Request;
+use MyMvc\Request\RequestInterface;
+use MyMvc\Router\AppRouterBinding;
+use MyMvc\Kernel\ControllerBuilderInfo\ControllerBuilderInfoImpl;
 
 class AppRouter implements Router, RouterBinder
 {

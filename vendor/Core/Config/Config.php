@@ -6,7 +6,7 @@
  * Time: 16:39
  */
 
-namespace TinyMvc\Config;
+namespace MyMvc\Config;
 
 
 interface Config

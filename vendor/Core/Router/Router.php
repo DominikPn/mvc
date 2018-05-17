@@ -6,9 +6,9 @@
  * Time: 15:21
  */
 
-namespace TinyMvc\Router;
+namespace MyMvc\Router;
 
-use TinyMvc\Request\RequestInterface;
+use MyMvc\Request\RequestInterface;
 
 interface Router
 {
@@ -16,7 +16,7 @@ interface Router
     public function getRequest();
 
     /**
-     * @return \TinyMvc\Kernel\ControllerBuilderInfo\ControllerBuilderInfo
+     * @return \MyMvc\Kernel\ControllerBuilderInfo\ControllerBuilderInfo
      */
     public function getControllerData();
 }

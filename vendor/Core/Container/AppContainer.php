@@ -6,7 +6,7 @@
  * Time: 17:24
  */
 
-namespace TinyMvc\Container;
+namespace MyMvc\Container;
 
 
 class AppContainer implements Container

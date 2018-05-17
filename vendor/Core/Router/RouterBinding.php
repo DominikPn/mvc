@@ -6,7 +6,7 @@
  * Time: 15:50
  */
 
-namespace TinyMvc\Router;
+namespace MyMvc\Router;
 
 
 interface RouterBinding

@@ -8,12 +8,12 @@ require_once '../vendor/autoload.php';
  * Time: 14:48
  */
 
-use TinyMvc\Kernel\Kernel;
-use TinyMvc\Router\AppRouter;
-use TinyMvc\Request\Request;
-use TinyMvc\ControllerResolver\AppControllerResolver;
-use TinyMvc\Container\AppContainer;
-use \TinyMvc\Config\AppConfig;
+use MyMvc\Kernel\Kernel;
+use MyMvc\Router\AppRouter;
+use MyMvc\Request\Request;
+use MyMvc\ControllerResolver\AppControllerResolver;
+use MyMvc\Container\AppContainer;
+use \MyMvc\Config\AppConfig;
 
 
 //$test = function ($asd){

@@ -6,10 +6,10 @@
  * Time: 16:17
  */
 
-namespace TinyMvc\ControllerResolver;
+namespace MyMvc\ControllerResolver;
 
 
-use TinyMvc\Kernel\ControllerBuilderInfo\ControllerBuilderInfo;
+use MyMvc\Kernel\ControllerBuilderInfo\ControllerBuilderInfo;
 
 interface ControllerResolver
 {

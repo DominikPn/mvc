@@ -6,10 +6,10 @@
  * Time: 16:45
  */
 
-namespace TinyMvc\Extensions;
+namespace MyMvc\Extensions;
 
 
-use TinyMvc\Container\Container;
+use MyMvc\Container\Container;
 
 interface Extension
 {

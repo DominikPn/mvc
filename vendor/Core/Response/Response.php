@@ -6,7 +6,7 @@
  * Time: 17:30
  */
 
-namespace TinyMvc\Response;
+namespace MyMvc\Response;
 
 
 class Response implements ResponseInterface

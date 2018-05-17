@@ -6,7 +6,7 @@
  * Time: 17:53
  */
 
-namespace TinyMvc\Router;
+namespace MyMvc\Router;
 
 
 class AppRouterBinding implements  RouterBinding

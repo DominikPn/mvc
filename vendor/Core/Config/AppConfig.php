@@ -6,7 +6,7 @@
  * Time: 16:52
  */
 
-namespace TinyMvc\Config;
+namespace MyMvc\Config;
 
 
 class AppConfig implements Config

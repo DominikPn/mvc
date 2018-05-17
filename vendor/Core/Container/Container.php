@@ -6,7 +6,7 @@
  * Time: 16:34
  */
 
-namespace TinyMvc\Container;
+namespace MyMvc\Container;
 
 
 interface Container

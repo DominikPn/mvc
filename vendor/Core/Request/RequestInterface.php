@@ -6,7 +6,7 @@
  * Time: 14:43
  */
 
-namespace TinyMvc\Request;
+namespace MyMvc\Request;
 
 interface RequestInterface
 {

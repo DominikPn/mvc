@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'TinyMvc\\' => array($vendorDir . '/Core'),
+    'MyMvc\\' => array($vendorDir . '/Core'),
     'App\\' => array($baseDir . '/App'),
 );

@@ -6,7 +6,7 @@
  * Time: 18:20
  */
 
-namespace TinyMvc\Kernel\ControllerBuilderInfo;
+namespace MyMvc\Kernel\ControllerBuilderInfo;
 
 
 class ControllerBuilderInfoImpl implements ControllerBuilderInfo

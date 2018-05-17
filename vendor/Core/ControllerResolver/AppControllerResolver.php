@@ -6,11 +6,11 @@
  * Time: 17:23
  */
 
-namespace TinyMvc\ControllerResolver;
+namespace MyMvc\ControllerResolver;
 
 
-use TinyMvc\Container\Container;
-use TinyMvc\Kernel\ControllerBuilderInfo\ControllerBuilderInfo;
+use MyMvc\Container\Container;
+use MyMvc\Kernel\ControllerBuilderInfo\ControllerBuilderInfo;
 
 class AppControllerResolver implements ControllerResolver
 {

@@ -6,13 +6,13 @@
  * Time: 15:44
  */
 
-namespace TinyMvc\Router;
+namespace MyMvc\Router;
 
 
 interface RouterBinder
 {
     /**
-     * @return \TinyMvc\Router\RouterBinding
+     * @return \MyMvc\Router\RouterBinding
      */
     public function bind(string $methodName, string $path, $action);
 }
