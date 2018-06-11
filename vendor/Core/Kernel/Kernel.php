@@ -33,6 +33,8 @@ class Kernel
     }
 
     /**
+     * Tworzymy odpowiedz dla klienta
+     *
      * @return ResponseInterface
      */
     public function execute(){

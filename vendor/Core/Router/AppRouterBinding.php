@@ -8,7 +8,12 @@
 
 namespace MyMvc\Router;
 
-
+/**
+ * Prosty kontener na akcje
+ *
+ * Class AppRouterBinding
+ * @package MyMvc\Router
+ */
 class AppRouterBinding implements  RouterBinding
 {
     private $method;

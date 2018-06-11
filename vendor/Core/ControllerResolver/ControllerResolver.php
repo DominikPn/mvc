@@ -14,7 +14,7 @@ use MyMvc\Kernel\ControllerBuilderInfo\ControllerBuilderInfo;
 interface ControllerResolver
 {
     /**
-     * @return \ReflectionClass
+     * @return \MyMvc\Response\ResponseInterface
      */
     public function callController(ControllerBuilderInfo $controllerBuilderInfo,$controller);
 }

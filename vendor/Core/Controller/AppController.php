@@ -8,8 +8,13 @@
 
 namespace MyMvc\Controller;
 
-
-class AppController
+/**
+ * Wszystkie kontrolery muszą dziedziczyć po tej klasie
+ *
+ * Class AppController
+ * @package MyMvc\Controller
+ */
+abstract class AppController
 {
 
 }

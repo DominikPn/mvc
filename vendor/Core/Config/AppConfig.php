@@ -8,12 +8,23 @@
 
 namespace MyMvc\Config;
 
-
+/**
+ * Konfiguracja aplikacji
+ *
+ * Class AppConfig
+ * @package MyMvc\Config
+ */
 class AppConfig implements Config
 {
-    public function read(string $src, string $default)
+    /**
+     * Odczytuje wartosc z podanego źrodła
+     * @param string $src
+     * @param mixed $default Wartość domyślna w razie braku wpisu w konfiguracji
+     * @return mixed
+     */
+    public function read(string $src, $default)
     {
-        // TODO: Implement read() method.
+        return $default;
     }
 
 }

@@ -12,7 +12,11 @@ namespace MyMvc\Config;
 interface Config
 {
     /**
+     * Odczytuje wartość z podanego źródła
+     *
+     * @param string $src
+     * @param $default Wartość domyślna w razie braku wpisu w konfiguracji
      * @return mixed
      */
-    public function read(string $src,string $default);
+    public function read(string $src, $default);
 }
