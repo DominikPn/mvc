@@ -27,14 +27,11 @@ require_once '../routes/web.php';
 //Tworzymy kontener zależnosci
 $container = new AppContainer();
 
-//Przypisujemy do interfejsu implementacje
-$container->bind('App\TestInterface','App\TestClass');
-
 //Tworzymy instancje klasy budującej nasze kontrolery
 $controllerResolver = new AppControllerResolver($container);
 
 //Konfiguracja naszej aplikacji
-$config = new AppConfig();
+$config = new AppConfig($_SERVER['DOCUMENT_ROOT'].'/../configs');
 
 //i tu się wsyzstko zaczyna
 $kernel = new Kernel($router, $controllerResolver, $container, $config);

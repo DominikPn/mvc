@@ -7,8 +7,6 @@
  */
 
 namespace App\Controllers;
-
-
 use App\TestInterface;
 use App\TestClass;
 use MyMvc\Response\Response;
