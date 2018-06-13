@@ -22,7 +22,7 @@ interface Container
      * Zwykły typ bindowania
      *
      * @param string $abstract Namespace typu abstrakcyjnego do ktorego przypiszemy implementacje
-     * @param $mixed Konkretna implementacja
+     * @param mixed $nameSpaceOrClosure Namspace klasy ktora ma zostac utworzona lub obiekt lub funkcja anonimowa
      */
     public function bind(string $abstract, $mixed);
 

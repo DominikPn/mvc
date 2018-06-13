@@ -64,7 +64,15 @@ class AppContainer implements Container
         if (self::$reflecitonLimit < self::$reflectionCount) throw new \Exception("Infinitie reflection error");
 
         //sprawdzamy czy namespace klasy lub interfejsu ma przypisaną implementację. Jeżeli namespace jest przypisany do konkretnej implementacji tworzymy instancje klasy.
-        if ($this->checkIfClassHasBinding($className)) return $this->createClassInstance($this->bindings[$className]);
+        if ($this->checkIfClassHasBinding($className)) {
+            $concrete = $this->bindings[$className];
+            //Sprawdzamy czy podana wartosc jest funkcją, jesli tak to ja wywołajmy
+            if ($this->isClosure($concrete)) return $concrete($this);
+            //Sprawdzamy czy to gotowy obiekt
+            if (is_object($concrete)) return $concrete;
+
+            return $this->createClassInstance($concrete);
+        }
 
         $reflection = new \ReflectionClass($className);
 
@@ -93,5 +101,11 @@ class AppContainer implements Container
     private function checkIfClassHasBinding(string $className)
     {
         return array_key_exists($className, $this->bindings);
+    }
+
+
+    private function isClosure($concrete)
+    {
+        return ($concrete instanceof \Closure);
     }
 }

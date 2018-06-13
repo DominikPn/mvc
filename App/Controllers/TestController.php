@@ -9,6 +9,7 @@
 namespace App\Controllers;
 use App\TestInterface;
 use App\TestClass;
+use App\TestInterface2;
 use MyMvc\Response\Response;
 
 class TestController extends Controller
@@ -35,8 +36,8 @@ class TestController extends Controller
 		return new Response('Wartosc $zmienna: '.$jakasWartosc.'<br>'.$test->testMetoda());
 	}
 	
-	public function containerBindingTest(TestInterface $test)
+	public function containerBindingTest(TestInterface $test, TestInterface2 $testInterface2)
 	{
-		return new Response($test->testMetoda());
+		return new Response($test->testMetoda() .'<br><br>'.$testInterface2->metodaTestInterface2());
 	}
 }
