@@ -81,3 +81,10 @@ Example Controller class:
       }
    }
   ```
+
+Request Lifecycle:
+ Index.php -> create Request, Router, Container, ControllerResolver and register URLs 
+  -> create Kernel: inject Router, Container, ControllerResolver, Config 
+   -> load extensions
+    -> create Response by calling execute() method on Kernel 
+     -> send Response
