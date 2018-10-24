@@ -7,7 +7,8 @@
  - route parameters
 
 <h2>Creating routes example:</h2>
-  ```php
+
+```php
     //Define in /routes/web.php
   
     $router->bind('GET', '/', '\App\Controllers\TestController@index');
@@ -15,12 +16,13 @@
     $router->bind('GET', '/user/{id}', '\App\Controllers\TestController@showUserInfo');
     //Set route name
     $router->bind('POST','/welcome', '\App\Controllers\AnotherController@welcome')->name('welcomPage'); 
-  ```
+ ```
   
 <h2>Register bindings in the container:<h2>
   
   a) Create extension class
-  ```php
+  
+```php
       namespace App\Extensions;
       use MyMvc\Extensions\FWExtension as Extension;
       
@@ -45,8 +47,10 @@
               });
           }
       }
-  ```
+```
+
 b) Register extension in /configs/extensions.php
+
   ```php
     return [
       \App\Extension\TestExtension::class
@@ -54,7 +58,8 @@ b) Register extension in /configs/extensions.php
   ```
   
 <h2>Example Controller class:</h2>
-  ```php
+
+```php
    namespace App\Controllers;
    
    use App\Extensions\TestExtension;
@@ -80,15 +85,18 @@ b) Register extension in /configs/extensions.php
         return new Response("Test DI container");
       }
    }
-  ```
+```
 
 
 <h2>Adding <b>Twig template engine</b>. Create simple wrapper</h2>
  a) Install TWIG and create two folders '/templates','/twigCache'
+ 
  ``` bash
  composer require spatie/laravel-permission
  ```
+ 
  b) Create classes
+ 
  ```php
     namespace App\Helpers;
 
@@ -97,6 +105,7 @@ b) Register extension in /configs/extensions.php
      public function render(string $path, array $data);
     }
  ```
+ 
  ```php
  namespace App\Helpers;
 
@@ -116,7 +125,9 @@ b) Register extension in /configs/extensions.php
      }
  }
  ```
+ 
  c) Create and register extension
+ 
   ```php
   namespace App\Extensions;
 
@@ -146,7 +157,9 @@ b) Register extension in /configs/extensions.php
       }
   }
  ```
+ 
  d) Now you cen use ViewHelper in Controllers
+ 
   ```php
     namespace App\Controllers;
     
