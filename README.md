@@ -82,7 +82,92 @@ Example Controller class:
    }
   ```
 
+Create simple wrapper for <b>Twig template engine</b>
+ a) Install TWIG and create two folders '/templates','/twigCache'
+ ``` bash
+ composer require spatie/laravel-permission
+ ```
+ b) Create classes
+ ```php
+    namespace App\Helpers;
+
+    interface View
+    {
+     public function render(string $path, array $data);
+    }
+ ```
+ ```php
+ namespace App\Helpers;
+
+ class ViewImpl implements View
+ {
+
+     private $twig;
+
+     public function __construct($twig)
+     {
+         $this->twig = $twig;
+     }
+
+     public function render(string $path, array $data = []){
+             $template = $this->twig->load($path);
+             return $template->render($data);
+     }
+ }
+ ```
+ c) Create and register extension
+  ```php
+  namespace App\Extensions;
+
+  use MyMvc\Extensions\FWExtension as Extension;
+  use App\Helpers\View;
+  use App\Helpers\ViewImpl;
+
+  class ViewExtension extends Extension
+  {
+      public function boot()
+      {
+
+      }
+
+      public function register()
+      {
+          $loader = new \Twig_Loader_Filesystem('../templates');
+          $twig = new \Twig_Environment($loader, array(
+              'cache' => '../twigCache',
+          ));
+
+          $this->container()->bind(View::class, function () use ($twig){
+              $viewImpl = new ViewImpl($twig);
+
+              return $viewImpl;
+          });
+      }
+  }
+ ```
+ d) Now you cen use ViewHelper in Controllers
+  ```php
+    namespace App\Controllers;
+    
+    use App\Helpers\View;
+    
+    class SomeController
+    {
+         private $view;
+         public function __construct(View $viewHelper)
+         {
+             $this->view = $viewHelper;
+         } 
+         public function twig()
+         {
+             return new Response($this->view->render('yourTemplateInTemplatesFolder.html',['name'=>'John']));
+	        }
+    }
+ ```
+
+
 Request Lifecycle:
+
  Index.php -> create Request, Router, Container, ControllerResolver and register URLs 
   -> create Kernel: inject Router, Container, ControllerResolver, Config 
    -> load extensions
