@@ -178,6 +178,11 @@ b) Register extension in /configs/extensions.php
 	        }
     }
  ```
+ 
+ ```php
+    //yourTemplateInTemplatesFolder.html file
+    <b>Hello {{ name }}</b>
+ ```
 
 
 <h2>Request Lifecycle:</h2>
