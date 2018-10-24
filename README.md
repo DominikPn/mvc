@@ -18,6 +18,7 @@ Creating routes example:
   ```
   
 Register bindings in the container:
+  
   a) Create extension class
   ```php
       namespace App\Extensions;
