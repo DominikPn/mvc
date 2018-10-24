@@ -18,7 +18,7 @@
     $router->bind('POST','/welcome', '\App\Controllers\AnotherController@welcome')->name('welcomPage'); 
  ```
   
-<h2>Register bindings in the container:<h2>
+<h2>Register bindings in the container:</h2>
   
   a) Create extension class
   
