@@ -1,12 +1,12 @@
 # mvc
-PHP MVC framework. 
+<h1>PHP MVC framework.</h1> 
 
-Features:
+<h2>Features:</h2>
  - beautiful URLs
  - dependency injection container
  - route parameters
 
-Creating routes example:
+<h2>Creating routes example:</h2>
   ```php
     //****Define in /routes/web.php****
   
@@ -17,7 +17,7 @@ Creating routes example:
     $router->bind('POST','/welcome', '\App\Controllers\AnotherController@welcome')->name('welcomPage'); 
   ```
   
-Register bindings in the container:
+<h2>Register bindings in the container:<h2>
   
   a) Create extension class
   ```php
@@ -53,7 +53,7 @@ b) Register extension in /configs/extensions.php
     ];
   ```
   
-Example Controller class:
+<h2>Example Controller class:</h2>
   ```php
    namespace App\Controllers;
    
@@ -82,7 +82,8 @@ Example Controller class:
    }
   ```
 
-Create simple wrapper for <b>Twig template engine</b>
+
+<h2>Adding <b>Twig template engine</b>. Create simple wrapper</h2>
  a) Install TWIG and create two folders '/templates','/twigCache'
  ``` bash
  composer require spatie/laravel-permission
@@ -166,7 +167,7 @@ Create simple wrapper for <b>Twig template engine</b>
  ```
 
 
-Request Lifecycle:
+<h2>Request Lifecycle:</h2>
 
  Index.php -> create Request, Router, Container, ControllerResolver and register URLs 
   -> create Kernel: inject Router, Container, ControllerResolver, Config 
