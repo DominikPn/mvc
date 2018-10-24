@@ -2,9 +2,9 @@
 <h1>PHP MVC framework.</h1> 
 
 <h2>Features:</h2>
- - beautiful URLs
- - dependency injection container
- - route parameters
+ - beautiful URLs<br/>
+ - dependency injection container<br/>
+ - route parameters<br/>
 
 <h2>Creating routes example:</h2>
 
