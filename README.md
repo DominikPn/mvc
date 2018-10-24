@@ -8,7 +8,7 @@
 
 <h2>Creating routes example:</h2>
   ```php
-    //****Define in /routes/web.php****
+    //Define in /routes/web.php
   
     $router->bind('GET', '/', '\App\Controllers\TestController@index');
     //Adding route parameter
