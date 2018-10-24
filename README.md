@@ -92,7 +92,7 @@ b) Register extension in /configs/extensions.php
  a) Install TWIG and create two folders '/templates','/twigCache'
  
  ``` bash
- composer require spatie/laravel-permission
+ composer require "twig/twig:^2.0"
  ```
  
  b) Create classes
