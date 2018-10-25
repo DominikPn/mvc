@@ -168,14 +168,16 @@ b) Register extension in /configs/extensions.php
     class SomeController
     {
          private $view;
+	 
          public function __construct(View $viewHelper)
          {
              $this->view = $viewHelper;
          } 
+	 
          public function twig()
          {
              return new Response($this->view->render('yourTemplateInTemplatesFolder.html',['name'=>'John']));
-	        }
+	 }
     }
  ```
  
