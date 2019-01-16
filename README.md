@@ -102,7 +102,7 @@ b) Register extension in /configs/extensions.php
 
     interface View
     {
-     public function render(string $path, array $data);
+     	public function render(string $path, array $data);
     }
  ```
  
