@@ -120,8 +120,8 @@ b) Register extension in /configs/extensions.php
      }
 
      public function render(string $path, array $data = []){
-             $template = $this->twig->load($path);
-             return $template->render($data);
+         $template = $this->twig->load($path);
+         return $template->render($data);
      }
  }
  ```
@@ -150,9 +150,7 @@ b) Register extension in /configs/extensions.php
           ));
 
           $this->container()->bind(View::class, function () use ($twig){
-              $viewImpl = new ViewImpl($twig);
-
-              return $viewImpl;
+              return new ViewImpl($twig);
           });
       }
   }
